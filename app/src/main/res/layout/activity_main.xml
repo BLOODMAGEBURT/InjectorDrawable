@@ -4,20 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/colorPrimaryDark">
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
     <ImageView
         android:id="@+id/injectorView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary" />
 
+    <SeekBar
+        android:id="@+id/durationBar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:padding="8dp"
+        android:progress="10" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="8dp"
+            android:text="Still" />
+
+        <Switch
+            android:id="@+id/resultSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/success"
+            android:layout_toRightOf="@id/success"
+            android:paddingStart="4dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/failure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/resultSwitch"
+            android:layout_toEndOf="@id/resultSwitch"
+            android:paddingStart="4dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="8dp"
+            android:text="Running" />
+
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/dividerBar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:padding="8dp"
+        android:progress="40" />
 
 
 </LinearLayout>
