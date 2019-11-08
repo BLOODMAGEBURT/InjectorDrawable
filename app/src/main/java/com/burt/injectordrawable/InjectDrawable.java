@@ -195,7 +195,9 @@ public class InjectDrawable extends Drawable {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
 
-       mBlockPaint.set(mPaint);
+        mBlockPaint.set(mPaint);
+        // 添加圆角效果
+        mPaint.setPathEffect(new CornerPathEffect(10));
 
     }
 
@@ -232,7 +234,7 @@ public class InjectDrawable extends Drawable {
     private void drawContainer(Canvas canvas) {
         mPaint.setColor(Color.WHITE);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setPathEffect(new CornerPathEffect(10));
+
         canvas.drawPath(mContainerPath, mPaint);
     }
 
