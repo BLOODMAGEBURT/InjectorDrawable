@@ -56,6 +56,7 @@ public class InjectDrawable extends Drawable {
     private Path upBlockPath = new Path();//上方色块路径
     private Path downBlockPath = new Path();//下方色块路径
     private PointF secondPoint;
+    private Paint mBlockPaint = new Paint(); // 色块的画笔
 
     /**
      * 通过目标View创建ArrowDrawable对象
@@ -112,7 +113,7 @@ public class InjectDrawable extends Drawable {
         mCenterY = mHeight / 2F;
         //底座高度
         mBowHeight = bowHeight;
-        mBowWidth = mBowHeight / 8F;
+        mBowWidth = mBowHeight / 7F;
         mWingLength = mBowHeight / 10F;
 
         //推杆
@@ -194,6 +195,8 @@ public class InjectDrawable extends Drawable {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
 
+       mBlockPaint.set(mPaint);
+
     }
 
     @Override
@@ -213,15 +216,15 @@ public class InjectDrawable extends Drawable {
     }
 
     private void drawDownBlock(Canvas canvas) {
-        mPaint.setColor(Color.GRAY);
-        mPaint.setStyle(Paint.Style.FILL);
-        canvas.drawPath(downBlockPath, mPaint);
+        mBlockPaint.setColor(Color.GRAY);
+        mBlockPaint.setStyle(Paint.Style.FILL);
+        canvas.drawPath(downBlockPath, mBlockPaint);
     }
 
     private void drawUpBlock(Canvas canvas) {
-        mPaint.setColor(Color.RED);
-        mPaint.setStyle(Paint.Style.FILL);
-        canvas.drawPath(upBlockPath, mPaint);
+        mBlockPaint.setColor(Color.RED);
+        mBlockPaint.setStyle(Paint.Style.FILL);
+        canvas.drawPath(upBlockPath, mBlockPaint);
     }
 
 
@@ -229,6 +232,7 @@ public class InjectDrawable extends Drawable {
     private void drawContainer(Canvas canvas) {
         mPaint.setColor(Color.WHITE);
         mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setPathEffect(new CornerPathEffect(10));
         canvas.drawPath(mContainerPath, mPaint);
     }
 
