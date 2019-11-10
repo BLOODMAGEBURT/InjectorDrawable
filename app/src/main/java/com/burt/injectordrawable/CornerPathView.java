@@ -17,6 +17,7 @@ public class CornerPathView extends View {
     Path mPath = new Path();
     CornerPathEffect pathEffect = new CornerPathEffect(20);
 
+    float f = 10.3f;
 
     public CornerPathView(Context context) {
         this(context, null);
@@ -58,10 +59,13 @@ public class CornerPathView extends View {
         canvas.restore();
 
         canvas.save();
-        canvas.translate(0, canvas.getHeight() / 2);
+        canvas.translate(0, getHeight() / 2);
         mPaint.setPathEffect(pathEffect);
         canvas.drawPath(mPath, mPaint);
         canvas.restore();
+
+
+
     }
 
     @Override

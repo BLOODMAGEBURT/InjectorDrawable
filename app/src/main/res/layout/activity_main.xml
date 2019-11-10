@@ -78,13 +78,10 @@
         android:padding="8dp"
         android:progress="40" />
 
-    <com.burt.injectordrawable.CornerPathView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorWhite"/>
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/toGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To_Guide"/>
 
 </LinearLayout>
