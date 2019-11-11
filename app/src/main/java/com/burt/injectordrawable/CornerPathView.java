@@ -6,6 +6,7 @@ import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -57,11 +58,15 @@ public class CornerPathView extends View {
         canvas.drawPath(mPath, mPaint);
 
         // 由于多次translate会叠加效果，所以需要保存状态
-        canvas.save();
-        canvas.translate(0, getHeight() / 2);
+//        canvas.save();
+        canvas.translate(0, getHeight() / 3);
         mPaint.setPathEffect(pathEffect);
         canvas.drawPath(mPath, mPaint);
-        canvas.restore();
+//        canvas.restore();
+
+        canvas.translate(0, getHeight() / 3);
+        mPaint.setPathEffect(pathEffect);
+        canvas.drawPath(mPath, mPaint);
 
     }
 
@@ -69,7 +74,7 @@ public class CornerPathView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                mPath.reset();
+//                mPath.reset();
                 mPath.moveTo(event.getX(), event.getY());
                 break;
 

@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         SeekBar dividerBar = findViewById(R.id.dividerBar);
 
-
         Switch resultSwitch = findViewById(R.id.resultSwitch);
 
         drawable.setDividerProgress(0.4f);
