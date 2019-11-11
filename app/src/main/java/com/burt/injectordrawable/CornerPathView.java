@@ -53,18 +53,15 @@ public class CornerPathView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.save();
         mPaint.setPathEffect(null);
         canvas.drawPath(mPath, mPaint);
-        canvas.restore();
 
+        // 由于多次translate会叠加效果，所以需要保存状态
         canvas.save();
         canvas.translate(0, getHeight() / 2);
         mPaint.setPathEffect(pathEffect);
         canvas.drawPath(mPath, mPaint);
         canvas.restore();
-
-
 
     }
 
