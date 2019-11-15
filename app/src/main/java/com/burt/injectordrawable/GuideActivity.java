@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.burt.injectordrawable.bean.PieData;
 import com.burt.injectordrawable.view.PieView;
+import com.burt.injectordrawable.view.RadarView;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,9 @@ public class GuideActivity extends AppCompatActivity {
         setContentView(R.layout.activity_guide);
 
         PieView pieView = findViewById(R.id.pieView);
+
+        RadarView radarView = findViewById(R.id.radarView);
+
 //        PieView pieView = new PieView(this);
         String[] names = {"sohu", "baidu", "bing", "yaho", "google"};
         float[] values = {20, 20, 30, 10, 20};

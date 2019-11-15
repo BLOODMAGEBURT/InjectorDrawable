@@ -8,18 +8,29 @@
     android:orientation="vertical"
     >
 
-    <com.burt.injectordrawable.CornerPathView
+    <!--<com.burt.injectordrawable.CornerPathView
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:background="@color/colorWhite"/>
+        android:background="@color/colorWhite"/>-->
 
     <com.burt.injectordrawable.view.PieView
         android:id="@+id/pieView"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="10dp"/>
+
+    <com.burt.injectordrawable.view.RadarView
+        android:id="@+id/radarView"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="10dp"/>
+    <com.burt.injectordrawable.view.SearchView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        />
 
 </LinearLayout>
