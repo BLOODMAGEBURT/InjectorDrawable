@@ -1,6 +1,7 @@
 package com.burt.injectordrawable.interview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,14 @@ public class InterviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interview);
 
+        // activity传值
+        activityDemo();
+        // fragment传值
+        fragmentDemo();
+
+    }
+
+    private void activityDemo() {
         Intent intent = new Intent(InterviewActivity.this, MainActivity.class);
         // 新建用于封装数据的 bundle对象
         Bundle bundle = new Bundle();
@@ -29,7 +38,27 @@ public class InterviewActivity extends AppCompatActivity {
         Intent intent1 = getIntent();
         intent1.getStringExtra("name");
         intent1.getIntExtra("age", 0);
+    }
+
+    private void fragmentDemo() {
+
+        Bundle bundle = new Bundle();
+        bundle.putString("key", "value is value");
+
+
+        Fragment fragment = new BlankFragment();
+        // 将fragment 与  bundle绑定
+        fragment.setArguments(bundle);
 
 
     }
+
+    // 定义一个public方法，给fragment传值
+
+    public String getTitleDemo() {
+
+        return "it's cool";
+    }
+
+
 }
