@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 
 import com.burt.injectordrawable.MainActivity;
 import com.burt.injectordrawable.R;
@@ -20,6 +24,20 @@ public class InterviewActivity extends AppCompatActivity {
         activityDemo();
         // fragment传值
         fragmentDemo();
+        Handler handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+            }
+        };
+
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
 
     }
 
