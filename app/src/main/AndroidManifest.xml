@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".interview.MyServiceActivity"></activity>
+
+        <service
+            android:name=".interview.MyIntentService"
+            android:exported="false" />
         <service
             android:name=".interview.MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".interview.InterviewActivity" />
         <activity android:name=".GuideActivity" />
